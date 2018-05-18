@@ -2,9 +2,10 @@ package models;
 
 import javax.persistence.*;
 import java.util.HashSet;
+import java.util.Set;
 
 @Entity
-@Table(name"studios")
+@Table(name = "studios")
 public class Studio {
 
     private int id;

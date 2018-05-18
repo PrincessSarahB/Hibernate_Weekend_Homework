@@ -5,11 +5,15 @@
 
 <hibernate-configuration>
     <session-factory>
-        <property name="hbm2ddl.auto">create</property>
+        <property name="hbm2ddl.auto">drop-create</property>
         <property name="connection.driver_class">org.postgresql.Driver</property>
         <property name="connection.url">jdbc:postgresql://localhost/hollywooddb</property>
         <property name="hibernate.dialect">org.hibernate.dialect.PostgreSQL9Dialect</property>
         <property name="connection.pool_size">1</property>
         <property name="show_sql">true</property>
+        <mapping class="models.Actor"/>
+        <mapping class="models.Director"/>
+        <mapping class="models.Film"/>
+        <mapping class="models.Studio" />
     </session-factory>
 </hibernate-configuration>

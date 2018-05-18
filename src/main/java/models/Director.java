@@ -15,8 +15,7 @@ public class Director {
     public Director() {
     }
 
-    public Director(int id, String name) {
-        this.id = id;
+    public Director(String name) {
         this.name = name;
         this.films = new HashSet<Film>();
     }

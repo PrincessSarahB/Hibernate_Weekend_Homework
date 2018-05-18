@@ -15,8 +15,7 @@ public class Actor {
     public Actor() {
     }
 
-    public Actor(int id, String name, double bankAccount) {
-        this.id = id;
+    public Actor(String name, double bankAccount) {
         this.name = name;
         this.bankAccount = bankAccount;
         this.films = new HashSet<Film>();

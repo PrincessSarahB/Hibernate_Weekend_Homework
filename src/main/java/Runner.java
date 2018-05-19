@@ -57,11 +57,15 @@ public class Runner {
 
         DBStudio.addFilmToStudio(studio1, film1);
 
+        studio1.payActor(actor1);
+
 
         List<Actor> actorsInFilm = DBFilm.listAllActorsOnFilm(film2);
         List<Film> actorsFilms = DBActor.listActorsFilms(actor3);
 
         List<Film> directorsFilms = DBDirector.showDirectorsFilms(director2);
         List<Film> studiosFilms = DBStudio.showStudiosFilms(studio1);
+
+
     }
 }

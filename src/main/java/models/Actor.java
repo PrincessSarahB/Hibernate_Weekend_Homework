@@ -9,8 +9,8 @@ import java.util.Set;
 public class Actor {
     private int id;
     private String name;
-    private double bankAccount;
-    private double fee;
+    protected double bankAccount;
+    protected double fee;
     private Set<Film> films;
 
     public Actor() {
@@ -75,5 +75,9 @@ public class Actor {
 
     public void setFee(double fee) {
         this.fee = fee;
+    }
+
+    public void isPaid(){
+
     }
 }

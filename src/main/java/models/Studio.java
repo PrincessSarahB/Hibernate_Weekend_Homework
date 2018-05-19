@@ -64,7 +64,10 @@ public class Studio {
         this.films.add(film);
     }
 
-//    public void payActor(Actor actor){
-//        this.budget -=
-//    }
+    public void payActor(Actor actor){
+        this.budget -= actor.fee;
+        actor.bankAccount += actor.fee;
+    }
+
+
 }

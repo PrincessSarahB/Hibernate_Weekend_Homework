@@ -31,4 +31,16 @@ public class StudioTest {
         studio.addFilm(film2);
         assertEquals(2, studio.getFilms().size());
     }
+
+    @Test
+    public void canPayActor(){
+        studio.payActor(actor);
+        assertEquals(499975000.00, studio.getBudget(), 0.01);
+    }
+
+    @Test
+    public void actorIsPaid(){
+        studio.payActor(actor);
+        assertEquals(425000.00, actor.getBankAccount(), 0.01);
+    }
 }

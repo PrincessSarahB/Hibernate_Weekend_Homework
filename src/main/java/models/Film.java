@@ -65,8 +65,8 @@ public class Film {
 
     @ManyToMany(cascade = CascadeType.PERSIST)
     @JoinTable(name ="actors_films",
-    joinColumns = {@JoinColumn(name = "film_id", nullable = false, updatable = false)},
-    inverseJoinColumns = {@JoinColumn(name = "actor_id", nullable = false, updatable = false)})
+    inverseJoinColumns = {@JoinColumn(name = "actor_id", nullable = false, updatable = false)},
+    joinColumns = {@JoinColumn(name = "film_id", nullable = false, updatable = false)})
     public Set<Actor> getActors() {
         return actors;
     }
@@ -74,4 +74,9 @@ public class Film {
     public void setActors(Set<Actor> actors) {
         this.actors = actors;
     }
+
+    public void addActorToFilm(Actor actor){
+        this.actors.add(actor);
+    }
+
 }

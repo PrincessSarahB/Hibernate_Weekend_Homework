@@ -1,8 +1,12 @@
+import db.DBActor;
+import db.DBFilm;
 import db.DBHelper;
 import models.Actor;
 import models.Director;
 import models.Film;
 import models.Studio;
+
+import java.util.List;
 
 public class Runner {
 
@@ -33,6 +37,25 @@ public class Runner {
         DBHelper.save(film3);
         Film film4 = new Film("Lord of the Rings: Return of the King", studio2, director2);
         DBHelper.save(film4);
+
+        List<Film> films = DBHelper.getAll(Film.class);
+        List<Actor> actors = DBHelper.getAll(Actor.class);
+        List<Director> directors = DBHelper.getAll(Director.class);
+        List<Studio> studios = DBHelper.getAll(Studio.class);
+
+        Film foundFilm = DBHelper.find(Film.class, film1.getId());
+        Actor foundActor = DBHelper.find(Actor.class, actor4.getId());
+        Director foundDirector = DBHelper.find(Director.class, director1.getId());
+        Studio foundStudio = DBHelper.find(Studio.class, studio2.getId());
+
+        DBFilm.addActorsToFilm(actor3, film2);
+        DBFilm.addActorsToFilm(actor3, film3);
+        DBFilm.addActorsToFilm(actor3, film4);
+        DBFilm.addActorsToFilm(actor4, film2);
+
+
+        List<Actor> actorsInFilm = DBFilm.listAllActorsOnFilm(film2);
+        List<Film> actorsFilms = DBActor.listActorsFilms(actor3);
 
 
     }

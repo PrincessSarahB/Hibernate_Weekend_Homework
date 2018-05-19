@@ -21,7 +21,7 @@ public class StudioTest {
         director = new Director("Peter Jackson");
         film1 = new Film("Lord of The Rings: The Fellowship of the Ring", studio, director);
         film2 = new Film("Lord of The Rings: The Two Towers", studio, director);
-        actor = new Actor("Sir Ian McKellen", 400000.00);
+        actor = new Actor("Sir Ian McKellen", 400000.00, 25000.00);
 
     }
 

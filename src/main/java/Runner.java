@@ -18,13 +18,13 @@ public class Runner {
         DBHelper.save(director1);
         Director director2 = new Director("Peter Jackson");
         DBHelper.save(director2);
-        Actor actor1 = new Actor("Greg Sestero", 1000);
+        Actor actor1 = new Actor("Greg Sestero", 1000.00, 1000.00);
         DBHelper.save(actor1);
-        Actor actor2  = new Actor("Tommy Wiseau", 1000000.00);
+        Actor actor2  = new Actor("Tommy Wiseau", 1000000.00, 5000.00);
         DBHelper.save(actor2);
-        Actor actor3 = new Actor("Elijah Wood", 2000000.00);
+        Actor actor3 = new Actor("Elijah Wood", 2000000.00, 10000.00);
         DBHelper.save(actor3);
-        Actor actor4 = new Actor("Sean Astin", 100000.00);
+        Actor actor4 = new Actor("Sean Astin", 100000.00, 7000.00);
         DBHelper.save(actor4);
 
         Film film1 = new Film ("The Room", studio1, director1);

@@ -10,14 +10,16 @@ public class Actor {
     private int id;
     private String name;
     private double bankAccount;
+    private double fee;
     private Set<Film> films;
 
     public Actor() {
     }
 
-    public Actor(String name, double bankAccount) {
+    public Actor(String name, double bankAccount, double fee) {
         this.name = name;
         this.bankAccount = bankAccount;
+        this.fee = fee;
         this.films = new HashSet<Film>();
     }
 
@@ -64,5 +66,14 @@ public class Actor {
 
     public void addFilmToActor(Film film) {
         this.films.add(film);
+    }
+
+    @Column(name="fee")
+    public double getFee() {
+        return fee;
+    }
+
+    public void setFee(double fee) {
+        this.fee = fee;
     }
 }

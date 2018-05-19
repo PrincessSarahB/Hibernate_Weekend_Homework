@@ -63,4 +63,8 @@ public class Studio {
     public void addFilm(Film film){
         this.films.add(film);
     }
+
+//    public void payActor(Actor actor){
+//        this.budget -=
+//    }
 }

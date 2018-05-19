@@ -1,4 +1,5 @@
 import db.DBActor;
+import db.DBDirector;
 import db.DBFilm;
 import db.DBHelper;
 import models.Actor;
@@ -53,10 +54,15 @@ public class Runner {
         DBFilm.addActorsToFilm(actor3, film4);
         DBFilm.addActorsToFilm(actor4, film2);
 
+        DBDirector.addFilmToDirector(director2, film2);
+        DBDirector.addFilmToDirector(director2, film3);
+        DBDirector.addFilmToDirector(director2, film4);
+
 
         List<Actor> actorsInFilm = DBFilm.listAllActorsOnFilm(film2);
         List<Film> actorsFilms = DBActor.listActorsFilms(actor3);
 
+        List<Film> directorsFilms = DBDirector.showDirectorsFilms(director2);
 
     }
 }

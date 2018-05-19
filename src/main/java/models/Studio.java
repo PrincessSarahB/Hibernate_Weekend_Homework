@@ -59,4 +59,8 @@ public class Studio {
     public void setBudget(double budget) {
         this.budget = budget;
     }
+
+    public void addFilm(Film film){
+        this.films.add(film);
+    }
 }

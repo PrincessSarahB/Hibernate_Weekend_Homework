@@ -1,8 +1,5 @@
 import db.*;
-import models.Actor;
-import models.Director;
-import models.Film;
-import models.Studio;
+import models.*;
 
 import java.util.List;
 
@@ -27,13 +24,13 @@ public class Runner {
         Actor actor4 = new Actor("Sean Astin", 100000.00, 7000.00);
         DBHelper.save(actor4);
 
-        Film film1 = new Film ("The Room", studio1, director1);
+        Film film1 = new Film ("The Room", studio1, director1, Genre.DRAMA);
         DBHelper.save(film1);
-        Film film2 = new Film("Lord of the Rings: The Fellowship of the Ring", studio2, director2);
+        Film film2 = new Film("Lord of the Rings: The Fellowship of the Ring", studio2, director2, Genre.FANTASY);
         DBHelper.save(film2);
-        Film film3 = new Film("Lord of the Rings: The Two Towers", studio2, director2);
+        Film film3 = new Film("Lord of the Rings: The Two Towers", studio2, director2, Genre.FANTASY);
         DBHelper.save(film3);
-        Film film4 = new Film("Lord of the Rings: Return of the King", studio2, director2);
+        Film film4 = new Film("Lord of the Rings: Return of the King", studio2, director2, Genre.FANTASY);
         DBHelper.save(film4);
 
         List<Film> films = DBHelper.getAll(Film.class);

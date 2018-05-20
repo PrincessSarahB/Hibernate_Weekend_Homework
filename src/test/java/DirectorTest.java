@@ -1,5 +1,6 @@
 import models.Director;
 import models.Film;
+import models.Genre;
 import models.Studio;
 import org.junit.Before;
 import org.junit.Test;
@@ -17,8 +18,8 @@ public class DirectorTest {
     public void setUp() {
         studio = new Studio("New Line Cinema", 500000000.00);
         director = new Director("Peter Jackson");
-        film1 = new Film("Lord of The Rings: The Fellowship of the Ring", studio, director);
-        film2 = new Film("Lord of The Rings: The Two Towers", studio, director);
+        film1 = new Film("Lord of The Rings: The Fellowship of the Ring", studio, director, Genre.FANTASY);
+        film2 = new Film("Lord of The Rings: The Two Towers", studio, director, Genre.FANTASY);
 
     }
 

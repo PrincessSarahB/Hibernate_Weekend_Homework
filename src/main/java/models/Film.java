@@ -13,14 +13,16 @@ public class Film {
     private Studio studio;
     private Director director;
     private Set<Actor> actors;
+    private Genre genre;
 
     public Film() {
     }
 
-    public Film(String title, Studio studio, Director director) {
+    public Film(String title, Studio studio, Director director, Genre genre) {
         this.title = title;
         this.studio = studio;
         this.director = director;
+        this.genre = genre;
         this.actors = new HashSet<Actor>();
     }
 
@@ -75,8 +77,18 @@ public class Film {
         this.actors = actors;
     }
 
+    @Column(name = "genre")
+    public Genre getGenre() {
+        return genre;
+    }
+
+    public void setGenre(Genre genre) {
+        this.genre = genre;
+    }
+
     public void addActorToFilm(Actor actor){
         this.actors.add(actor);
     }
+
 
 }

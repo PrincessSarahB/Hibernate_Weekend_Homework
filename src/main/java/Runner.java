@@ -58,7 +58,8 @@ public class Runner {
         DBStudio.addFilmToStudio(studio1, film1);
 
         studio1.payActor(actor1);
-
+        DBHelper.save(actor1);
+        Actor foundActor2 = DBHelper.find(Actor.class, actor1.getId());
 
         List<Actor> actorsInFilm = DBFilm.listAllActorsOnFilm(film2);
         List<Film> actorsFilms = DBActor.listActorsFilms(actor3);

@@ -11,10 +11,14 @@ public class Runner {
         DBHelper.save(studio1);
         Studio studio2 = new Studio("New Line Cinema", 300000000.00);
         DBHelper.save(studio2);
+        Studio studio3 = new Studio("Universal", 1000000.00);
+        DBHelper.save(studio3);
         Director director1 = new Director("Tommy Wiseau");
         DBHelper.save(director1);
         Director director2 = new Director("Peter Jackson");
         DBHelper.save(director2);
+        Director director3 = new Director("Alan Shapiro");
+        DBHelper.save(director3);
         Actor actor1 = new Actor("Greg Sestero", 1000.00, 1000.00);
         DBHelper.save(actor1);
         Actor actor2  = new Actor("Tommy Wiseau", 1000000.00, 5000.00);
@@ -32,6 +36,7 @@ public class Runner {
         DBHelper.save(film3);
         Film film4 = new Film("Lord of the Rings: Return of the King", studio2, director2, Genre.FANTASY);
         DBHelper.save(film4);
+        Film film5 = new Film("Flipper", studio3, director3, Genre.KIDS);
 
         List<Film> films = DBHelper.getAll(Film.class);
         List<Actor> actors = DBHelper.getAll(Actor.class);
@@ -46,6 +51,7 @@ public class Runner {
         DBFilm.addActorsToFilm(actor3, film2);
         DBFilm.addActorsToFilm(actor3, film3);
         DBFilm.addActorsToFilm(actor3, film4);
+        DBFilm.addActorsToFilm(actor3, film5);
         DBFilm.addActorsToFilm(actor4, film2);
 
         DBDirector.addFilmToDirector(director2, film2);
@@ -64,6 +70,6 @@ public class Runner {
         List<Film> directorsFilms = DBDirector.showDirectorsFilms(director2);
         List<Film> studiosFilms = DBStudio.showStudiosFilms(studio1);
 
-
+        List<Film> filmsbyGenre = DBActor.listActorsFilmsByGenre(actor3);
     }
 }
